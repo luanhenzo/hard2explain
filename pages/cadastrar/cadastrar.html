@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hard2Explain</title>
     <link href="style.css" rel="stylesheet" />
-    <link href="media-queries.css" rel="stylesheet" />
+    <link href="media-queries.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <main>
@@ -14,12 +15,66 @@
             <div id="imagem"></div>
             <div id="formulario">
                 <h1>Cadastrar-se</h1>
-                <p>
+                <!--<p>
                     Seja bem-vindo(a) ao Hard2Explain.<br/>
                     Para acessar o sistema, cadastre-se usando o forumlário abaixo.
-                </p>
-                <form action="" method="POST">
-                    
+                </p> -->
+                <form action="" method="POST" autocomplete="on">
+                    <div class="campo">
+                        <span class="material-icons">person</span>
+                        <input type="text"
+                               name="nome_completo"
+                               id="inome_completo"
+                               placeholder="Seu nome completo..."
+                               autocomplete="name"
+                               required/>
+                    </div>
+                    <div class="campo">
+                        <span class="material-icons">mail</span>
+                        <input type="email"
+                               name="email"
+                               id="iemail"
+                               placeholder="Seu e-mail..."
+                               autocomplete="email"
+                               required/>
+                    </div>
+                    <div class="campo">
+                        <span class="material-icons">pin</span>
+                        <input type="text"
+                               name="cpf"
+                               id="icpf"
+                               placeholder="Seu CPF..."
+                               autocomplete="off"
+                               required/>
+                    </div>
+                    <div class="campo">
+                        <span class="material-icons">event</span>
+                        <input type="date"
+                               name="dt_nascimento"
+                               id="idt_nascimento"
+                               autocomplete="bday"
+                               required/>
+                    </div>
+                    <div class="campo">
+                        <span class="material-icons">person_3</span>
+                        <select name="genero"
+                                id="igenero"
+                                required>
+                            <option value="">Seu gênero...</option>
+                            <option value="masculino">Masculino</option>
+                            <option value="feminino">Feminino</option>
+                        </select>
+                    </div>
+                    <div class="campo">
+                        <span class="material-icons">vpn_key</span>
+                        <input type="password"
+                               name="senha"
+                               id="isenha"
+                               placeholder="Sua senha..."
+                               autocomplete="current-password"
+                               required/>
+                    </div>
+                    <button type="submit">Cadastrar</button>
                 </form>
             </div>
         </section>

@@ -27,7 +27,6 @@ section#cadastro {
 
     background-color: white;
     width: 250px;
-    height: 500px;
     border-radius: 20px;
 
     overflow: hidden;
@@ -49,4 +48,49 @@ section#cadastro > div#imagem {
 section#cadastro > div#formulario {
     display: block;
     padding: 10px;
+}
+
+div#formulario > h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+div#formulario > p {
+    font-size: 1em;
+}
+
+form > div.campo {
+    display: flex;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+    align-items: center;
+}
+
+form > div.campo > input {
+    flex-grow: 1;
+    height: 2.5em;
+}
+
+form > div.campo > select {
+    flex-grow: 1;
+    height: 2.5em;
+}
+
+form > button[type=submit] {
+    text-align: center;
+    font-size: 1em;
+     
+    width: 100%;
+    height: 40px;
+    background-color: #49a09d;
+
+    border: none;
+    border-radius: 5px;
+
+    transition: .3s;
+}
+
+form > button[type=submit]:hover {
+    background-color: #49a09d8f;
 }
