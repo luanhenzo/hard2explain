@@ -8,7 +8,7 @@
 }
 
 body, html {
-    background-color: #5f2c82;
+    background-image: linear-gradient(to top, #49a09d, #5f2c82);
     height: 100vh;
     width: 100vw;
 }
@@ -33,6 +33,9 @@ section#cadastro {
     overflow: hidden;
 
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.514);
+
+    transition: width .3s, height .3s;
+    transition-timing-function: ease;
 }
 
 section#cadastro > div#imagem {
