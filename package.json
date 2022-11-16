@@ -1,0 +1,26 @@
+{
+  "name": "hard2explain",
+  "version": "1.0.0",
+  "description": "",
+  "main": "static/scripts/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luanhenzo/hard2explain.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luanhenzo/hard2explain/issues"
+  },
+  "homepage": "https://github.com/luanhenzo/hard2explain#readme",
+  "dependencies": {
+    "@apollo/server": "^4.1.1",
+    "graphql": "^16.6.0"
+  }
+}
