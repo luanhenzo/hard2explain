@@ -5,12 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ASSLA</title>
-    <link href="style.css" rel="stylesheet" />
-    <link href="media-queries.css" rel="stylesheet"/>
+    <link href="/styles/cadastrar/style.css" rel="stylesheet" />
+    <link href="/styles/cadastrar/media-queries.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- <script src="/scripts/cadastrar/bundle.js"></script> -->
 </head>
 <body>
-    <a id="logo" href="../index/index.html">
+    <a id="logo" href="/">
         <h1>ASSLA</h1>
     </a>
     <main>
@@ -18,14 +19,13 @@
             <div id="imagem"></div>
             <div id="formulario">
                 <h1>Cadastrar-se</h1>
-                <!--<p>
-                    Seja bem-vindo(a) a página do associado ASSLA.<br/>
-                    Para acessar, faça o login, ou cadastre-se usando o forumlário abaixo.
-                </p> -->
-                <form action="" method="POST" autocomplete="on">
+                <form action="https://asla-db.hasura.app/v1/graphql"
+                      method="POST"
+                      autocomplete="on">
                     <div class="campo">
                         <span class="material-icons">person</span>
                         <input type="text"
+                               value="Luan"
                                name="nome_completo"
                                id="inome_completo"
                                placeholder="Seu nome completo..."
@@ -35,6 +35,7 @@
                     <div class="campo">
                         <span class="material-icons">mail</span>
                         <input type="email"
+                               value="luan@email.com"
                                name="email"
                                id="iemail"
                                placeholder="Seu e-mail..."
@@ -44,6 +45,7 @@
                     <div class="campo">
                         <span class="material-icons">pin</span>
                         <input type="text"
+                               value="00000000000"
                                name="cpf"
                                id="icpf"
                                placeholder="Seu CPF..."
@@ -53,6 +55,7 @@
                     <div class="campo">
                         <span class="material-icons">event</span>
                         <input type="date"
+                               value="2002-05-03"
                                name="dt_nascimento"
                                id="idt_nascimento"
                                autocomplete="bday"
@@ -64,21 +67,27 @@
                                 id="igenero"
                                 required>
                             <option value="">Seu gênero...</option>
-                            <option value="masculino">Masculino</option>
-                            <option value="feminino">Feminino</option>
+                            <option value="1" selected>Masculino</option>
+                            <option value="2">Feminino</option>
                         </select>
                     </div>
                     <div class="campo">
                         <span class="material-icons">vpn_key</span>
                         <input type="password"
+                               value="luan@senha"
                                name="senha"
                                id="isenha"
                                placeholder="Sua senha..."
                                autocomplete="current-password"
                                required/>
                     </div>
-                    <button type="submit">Cadastrar</button>
-                    <button type="button" onclick="location.href = '../conectar/conectar.html';">Já sou associado</button>
+                    <button type="button" onclick="cadastrar.cadastrarUsuario(inome_completo.value,
+                                                                    iemail.value,
+                                                                    icpf.value,
+                                                                    idt_nascimento.value,
+                                                                    igenero.value,
+                                                                    isenha.value)">Cadastrar</button>
+                    <button type="button" onclick="location.href = '/conectar';">Já sou associado</button>
                 </form>
             </div>
         </section>

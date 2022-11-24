@@ -5,12 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hard2Explain</title>
-    <link href="style.css" rel="stylesheet" />
-    <link href="media-queries.css" rel="stylesheet"/>
+    <link href="/styles/conectar/style.css"  rel="stylesheet" />
+    <link href="/styles/conectar/media-queries.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- <script src="/scripts/conectar/bundle.js"></script> -->
 </head>
 <body>
-    <a id="logo" href="../index/index.html">
+    <a id="logo" href="/">
         <h1>Hard2Explain</h1>
     </a>
     <main>
@@ -18,10 +19,11 @@
             <div id="imagem"></div>
             <div id="formulario">
                 <h1>Conectar-se</h1>
-                <form action="" method="POST" autocomplete="on">
+                <form id="formm" method="POST" autocomplete="on">
                     <div class="campo">
                         <span class="material-icons">mail</span>
                         <input type="email"
+                               value="luan@email.com"
                                name="email"
                                id="iemail"
                                placeholder="Seu e-mail..."
@@ -31,15 +33,17 @@
                     <div class="campo">
                         <span class="material-icons">vpn_key</span>
                         <input type="password"
+                               value="luan@senha"
                                name="senha"
                                id="isenha"
                                placeholder="Sua senha..."
                                autocomplete="current-password"
                                required/>
                     </div>
-                    <button type="submit">Entrar</button>
+                    <!-- <button type="button" onclick="console.log(conectar.logar(iemail.value, isenha.value));">Entrar</button> -->
+                    <button type="submit">Conectar</button>
                     <button type="button">Esqueci a senha<span class="material-icons">mail</span></button>
-                    <button type="button" onclick="location.href = '../cadastrar/cadastrar.html';">Quero me associar</button>
+                    <button type="button" onclick="location.href = '/cadastrar';">Quero me associar</button>
                 </form>
             </div>
         </section>

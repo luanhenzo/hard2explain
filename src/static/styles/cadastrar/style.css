@@ -53,7 +53,7 @@ section#cadastro {
 
 section#cadastro > div#imagem {
     display: block;
-    background: #5f2c82 url(../../static/images/metal.jpg);
+    background: #5f2c82 url(/images/metal.jpg);
     background-size: cover;
 
     height: 200px;
