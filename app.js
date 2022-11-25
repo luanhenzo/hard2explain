@@ -15,17 +15,27 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/src/pages/index.html")
-  console.log(req.cookies.CONNECTED_USER);
+    console.log(req.cookies.CONNECTED_USER);
+    res.sendFile(__dirname + "/src/pages/index.html")
 });
 
 app.get("/conectar", (req, res) => {
     res.sendFile(__dirname + "/src/pages/conectar.html")
 });
-  
+
 app.post("/conectar", (req, res) => {
-    res.sendFile(__dirname + "/src/pages/conectar.html")
-    console.log(conectar.logar(req.body.email, req.body.senha));
+    conectar.logar(req.body.email, req.body.senha)
+        .then((data) => {
+            if (data.data.usuarios.length === 1) {
+                res.cookie('CONNECTED_USER', data.data.usuarios[0].email);
+                console.log("Conectado com sucesso!");
+            } else if (data.data.usuarios.length > 1) {
+                console.log("Temos um problemão.");
+            } else {
+                console.log("Não foi possível se conectar!");
+            }
+            res.sendFile(__dirname + "/src/pages/conectar.html")
+        });
 });
 
 app.get("/cadastrar", (req, res) => {
