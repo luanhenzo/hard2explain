@@ -6,10 +6,6 @@ const conectar = require("./src/static/scripts/conectar/scripts.js");
 
 const app = express();
 
-app.listen(3000, () => {
-  console.log("Application started and Listening on port 3000");
-});
-
 app.use(express.static(__dirname + "/src/static/"));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -41,3 +37,7 @@ app.post("/conectar", (req, res) => {
 app.get("/cadastrar", (req, res) => {
   res.sendFile(__dirname + "/src/pages/cadastrar.html")
 });
+
+app.listen(3000, () => {
+    console.log("Application started and Listening on port 3000");
+  });
