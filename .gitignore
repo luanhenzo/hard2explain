@@ -3,6 +3,7 @@
 
 ### This project things ###
 /src/static/api/*
+.env
 
 ### VisualStudioCode ###
 .vscode/*
