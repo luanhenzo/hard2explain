@@ -34,7 +34,7 @@ app.post("/conectar", (req, res) => {
         });
 });
 
-app.get("/cadastrar", (req, res) => {
+app.get("/associese", (req, res) => {
   res.sendFile(__dirname + "/src/pages/cadastrar.html")
 });
 
