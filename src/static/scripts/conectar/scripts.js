@@ -13,7 +13,7 @@ async function logar(email, passw) {
         "query": 
             `query {
                 usuarios (where: { email: { _eq: "${email}" },
-                                    senha: { _eq: "${hashed_passw}"}}) {
+                                   senha: { _eq: "${hashed_passw}"}}) {
                     id
                     email
                     senha
@@ -23,7 +23,6 @@ async function logar(email, passw) {
 
     const options = {
         "method": 'POST',
-        "credentials": 'include',
         "headers": headers,
         "body": JSON.stringify(graphqlQuery)
     }

@@ -1,8 +1,13 @@
 const encryptation = require('../utils/encryptation.js')
 const hasura_config = require('../../api/hasura.config.json');
 
-function cadastrarUsuarios(nome_completo, email, cpf, dt_nascimento, genero, senha) {
+async function cadastrarUsuarios(nome_completo, email, cpf, dt_nascimento, genero, senha) {
     const senhaCiphered = encryptation.encrypt(senha);
+
+    const headers = {
+        "Content-Type": 'application/json',
+        "x-hasura-admin-secret": hasura_config.production["x-hasura-admin-secret"],
+    };
 
     const usuario = 
         { query: `mutation {
@@ -23,12 +28,15 @@ function cadastrarUsuarios(nome_completo, email, cpf, dt_nascimento, genero, sen
             }`
         };
 
-    fetch(hasura_config.production['url'],
-        { method: 'POST',
-            headers: {'x-hasura-admin-secret': hasura_config.production['x-hasura-admin-secret'],},
-            body: JSON.stringify(usuario) })
-    .then((response) => response.json())
-    .then((data) => console.log(data));
+    const options = {
+        "method": 'POST',
+        "headers": headers,
+        "body": JSON.stringify(graphqlQuery)
+    }
+
+    const response = await fetch(hasura_config.production.url, options);
+    
+    return response.json();
 }
 
 module.exports = {
